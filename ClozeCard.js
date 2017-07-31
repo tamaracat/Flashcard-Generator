@@ -8,14 +8,10 @@ var ClozeCard = function(text, cloze) {
   this.cloze = cloze;
   this.partial = function(){
 
-    var reStr = this.text.split(" ");
-  
-    reStr[0] = "...";
+  var partial = this.text.replace(this.cloze, "...");
 
-    this.partial = reStr.join(" ");
-   
-    // console.log(this.partial);
-    return this.partial;
+  return partial;
+  
   };
   this.fullText = function(){
 
